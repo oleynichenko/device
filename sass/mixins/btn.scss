@@ -1,0 +1,15 @@
+@mixin btn {
+  padding: 0;
+  
+  border: none;
+
+  font: inherit;
+  text-transform: inherit;
+
+  background-color: transparent;
+  cursor: pointer;
+
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+}
