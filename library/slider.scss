@@ -1,0 +1,29 @@
+.slider__input {
+
+	&[id*="input-1"]:checked ~ .slider__items .slider__item:nth-child(1) {
+		display: block;
+	}
+
+	&[id*="input-2"]:checked ~ .slider__items .slider__item:nth-child(2) {
+		display: block;
+	}
+
+	&[id*="input-3"]:checked ~ .slider__items .slider__item:nth-child(3) {
+		display: block;
+	}
+}
+
+.slider__item {
+	animation: sliding 1s;
+}
+
+@keyframes sliding {
+	0% {
+		transform: translateX(-500px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}

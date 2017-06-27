@@ -1,0 +1,304 @@
+.top-goods {
+  background: linear-gradient(to bottom, $y-main 75px, #fff 75px);
+  margin-bottom: 75px;
+}
+
+.top-goods__wrapper {
+  position: relative;
+
+  @include container-fluid;
+
+  &::before {
+    @include pseudo;
+
+    left: 0;
+    top: 25px;
+
+    width: 60px;
+    height: 7px;
+
+    background-color: #fff;
+  }
+}
+
+.top-goods__title {
+  @include vh;
+}
+
+.top-goods input[name="top-goods-toogle"] {
+  display: none;
+}
+
+.top-goods__item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  animation: display-in-order 1s;
+
+  &::before {
+    @include pseudo;
+    top: -18px;
+    right: 0px;
+
+    @include font-accent(135px, 1, 900, #fff);
+  }
+
+  &--self::before {
+    content: "01";
+  }
+
+  &--dron::before {
+    content: "03";
+  }
+
+  &--braslet::before {
+    content: "02";
+  }
+}
+
+.top-goods__image {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+
+  height: 300px;
+  width: 100%;
+
+  padding-top: 40px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  &--small {
+    padding-top: 100px;
+  }
+}
+
+.top-goods__image img {
+  display: block;
+  max-height: 100%;
+
+  margin: 0 auto;
+}
+
+.top-goods__appeal {
+  display: block;
+  height: 60px;
+  overflow: hidden;
+
+  margin-bottom: 15px;
+
+  @include font-accent(25px, 30px, 900);
+
+  animation: display-in-order 1.5s;
+}
+
+.top-goods__desctiption {
+  min-height: 96px;
+  overflow: hidden;
+
+  @include font(15px, 24px);
+
+  margin-bottom: 15px;
+
+  animation: display-in-order 2s;
+}
+
+@keyframes display-in-order {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes display-in-order2 {
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.top-goods__item-title {
+  @include vh;
+}
+
+.top-goods__content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.top-goods__features {
+  display: flex;
+  flex-wrap: wrap;
+  order: 1;
+
+  margin-top: auto;
+
+  animation: display-in-order 2s;
+}
+
+.top-goods__features-title {
+  @include vh;
+}
+
+.top-goods__features-block {
+  display: flex;
+  flex-direction: column-reverse;
+  
+  margin-right: 25px;
+  margin-top: 25px;
+}
+
+.top-goods__features-block:last-child {
+    margin-right: 0px;
+}
+
+.top-goods__features-index {
+  @include font-accent(25px, 25px, normal);
+
+  margin-bottom: 5px;
+}
+
+.top-goods__features-text {  
+  @include font(13px, 20px);
+}
+
+.top-goods__features-btn {
+  width: 180px;
+  animation: display-in-order2 2s;
+}
+
+.top-goods__toggle {
+  position: absolute;
+  top: 517px;
+  right: 0;
+}
+
+.top-goods__toggle label {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+
+  margin-right: 15px;
+  
+  border: 3px solid #000;
+  border-radius: 50%;
+
+  background-color: #fff;
+
+  cursor: pointer;
+  opacity: 0.3;
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+
+input[id="top-goods-input-1"]:checked ~ .top-goods__toggle label:nth-child(1), 
+input[id="top-goods-input-2"]:checked ~ .top-goods__toggle label:nth-child(2), 
+input[id="top-goods-input-3"]:checked ~ .top-goods__toggle label:nth-child(3) {
+  opacity: 1;
+}
+
+@media #{$tablet-width} {
+  .top-goods__wrapper {
+    &::before {    
+      left: 45%;
+
+      width: 80px;
+    }
+  }  
+
+  .top-goods__item {
+  }
+
+  .top-goods__image {
+    width: 45%;
+    height: 400px;
+    
+    margin-bottom: 0;
+    margin-right: 5%;
+  }
+
+  .top-goods__content {
+    width: 50%;
+
+    padding-top: 55px;    
+  }
+
+  .top-goods__appeal {
+    height: 72px;
+
+    margin-bottom: 20px;
+
+    @include font-accent(30px, 36px, 900);
+  }
+
+  .top-goods__desctiption {
+    height: 72px;
+
+    margin-bottom: 25px;
+  }
+
+  .top-goods__features-index {
+    @include font-accent(30px, 30px, normal);
+  }
+
+  .top-goods__features-btn {
+    width: 220px;
+  }
+
+  .top-goods__toggle {
+    top: 279px;
+    bottom: auto;
+  }
+}
+
+@media #{$desktop-width} {
+
+  .top-goods__content {
+    padding-top: 40px;
+  }
+
+  .top-goods__image {
+    height: 450px;
+  }
+
+  .top-goods__appeal {
+    height: 110px;
+
+    @include font-accent(45px, 55px, 900);
+  }
+
+  .top-goods__desctiption {
+    height: 90px;
+
+    @include font(15px, 30px);
+
+    margin-bottom: 30px;
+  }
+
+  .top-goods__features-block { 
+    margin-right: 60px;
+  }
+
+  .top-goods__toggle {
+    top: 308px;
+    right: 0;
+  }
+}
+
+/*  &::before {
+    @include pseudo;
+    width: 60px;
+    height: 10px;
+
+    bottom: 45px;
+    left: 0;    
+
+    background-color: #fff;
+  }*/
+

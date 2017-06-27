@@ -1,0 +1,17 @@
+@mixin font ($size: 15px, $lh: 1, $weight: 300, $color: #000,  $letter-spacing: normal) {
+  font-family: 'Open Sans', sans-serif;
+	font-size: $size;
+	color: $color;
+	font-weight: $weight;
+	line-height: $lh;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin font-accent ($size: 18px, $lh: 1, $weight: normal, $color: #000, $letter-spacing: normal) {
+  font-family: 'Gilroy', sans-serif;
+	font-size: $size;
+	color: $color;
+	font-weight: $weight;
+	line-height: $lh;
+  letter-spacing: $letter-spacing;
+}

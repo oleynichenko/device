@@ -1,0 +1,143 @@
+.menu-user {
+  @include reset-ul;
+} 
+
+.menu-user__link {
+  position: relative; 
+
+  display: block;
+
+  padding: 15px 20px;
+  padding-left: 45px;
+
+  border-bottom: 1px solid $y-shad;
+  border-top: 1px solid $y-glare;
+
+  @include font(15px, 18px);
+  text-decoration: none;
+  background-color: $y-sub;
+
+  &:hover {
+    background-color: $y-glare;
+    border-top-color: $y-glare;
+    border-bottom-color: $y-glare;
+  }
+
+  &:active {
+    background-color: $y-shad;
+    border-top-color: $y-shad;
+    color: rgba(#000, 0.3);
+  }
+}
+
+.menu-user__link:before {
+  filter: brightness(0);  
+}
+
+.menu-user__link:before {
+  content: "";
+
+  position: absolute; 
+  top: 20px;
+  left: 20px;
+
+  background-image: url(../../img/sprite-header.png);
+  background-repeat: no-repeat;
+}
+
+.menu-user__link--cart:before {
+    width: 12px;
+    height: 12px;
+    background-position: -1px -1px;
+    top: 19px;
+}
+
+.menu-user__link--compare:before {
+    width: 12px;
+    height: 10px;
+    background-position: -13px -1px;
+}
+
+.menu-user__link--enter:before {
+    width: 13px;
+    height: 12px;
+    background-position: -27px -1px;
+}
+
+@media #{$tablet-width} {
+  .menu-user {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 60%;    
+
+    margin-left: 40%;
+    margin-bottom: 50px;
+  }
+  
+  .menu-user__link {
+    padding: 0;
+    padding-left: 25px;
+
+    border: none;
+
+    background-color: transparent;
+
+    &::before {
+      top: 4px;
+      left: 0px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      opacity: 0.6;
+    }
+
+    &:active {
+      background-color: transparent;
+      color: #000;
+      opacity: 0.3;
+    }
+  }
+  
+  .menu-user li {
+    margin-left: 40px;
+  }
+
+  .menu-user li:first-child {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .menu-user--footer {
+    width: 330px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .menu-user__link--footer:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+  .menu-user__link--footer:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .menu-user__link--footer:before {
+    filter: saturate(0.3);  
+  }
+
+  .menu-user__link--footer:hover:before {
+    filter: saturate(1);  
+  }
+
+  .menu-user__link--footer:active:before {
+    filter: saturate(1) opacity(0.3);
+  }
+}
+
+@media #{$tablet-width-additional} {
+  .menu-user {
+    width: 50%;    
+
+    margin-left: 50%;
+  }
+}

@@ -1,0 +1,97 @@
+$hamburger-bg: transparent;
+$hamburger-bg-hover: transparent;
+
+$hamburger-color: rgba(#fff, 1);
+$hamburger-color-active: rgba(#fff, 0.5);
+$hamburger-color-hover: rgba(#fff, 0.8);
+
+$hamburger-bg-width: 50px;
+$hamburger-bg-height: 50px;
+
+.hamburger {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	width: $hamburger-bg-width;
+	height: $hamburger-bg-height;
+
+	@include btn;
+	font-size: 0;
+
+	background-color: $hamburger-bg;
+	cursor: pointer;
+	outline: none;
+
+	&:hover {
+		background-color: $hamburger-bg-hover;		
+	}
+}
+
+.main-nav--closed .hamburger::before {
+	@include pseudo();
+	top: 13px;
+	right: 0;
+
+	width: 36px;
+	height: 2px;
+
+	background-color: $hamburger-color;
+	box-shadow: 0 10px 0 $hamburger-color,
+							0 20px 0 $hamburger-color;
+}
+
+.main-nav--closed .hamburger {
+	&:active::before {
+		background-color: $hamburger-color-active;
+		box-shadow: 0 10px 0 $hamburger-color-active,
+								0 20px 0 $hamburger-color-active;
+	}	
+
+	&:hover::before {
+		background-color: $hamburger-color-hover;
+		box-shadow: 0 10px 0 $hamburger-color-hover,
+								0 20px 0 $hamburger-color-hover;
+	}
+}
+
+.main-nav--opened .hamburger {
+	left: 0;
+	right: auto;
+
+  &::after, 
+  &::before {
+		@include pseudo();
+		top: 24px;
+		left: -5px;
+
+		width: 36px;
+		height: 2px;
+
+		background-color: $hamburger-color;
+	}
+
+	&::before {
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+	}
+
+	&:active:before,
+	&:active:after {
+		background-color: $hamburger-color-active;
+	}
+
+	&:hover:before,
+	&:hover:after {
+		background-color: $hamburger-color-hover;
+	}
+}
+
+@media #{$tablet-width} {
+	.hamburger {
+		display: none;
+	}
+}

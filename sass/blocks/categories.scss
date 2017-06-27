@@ -1,0 +1,143 @@
+.categories {
+  @include container-fluid;
+
+  margin-bottom: 50px;
+}
+
+.categories__title {
+  @include vh;
+}
+
+.categories__items {
+  @include reset-ul;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.categories__items li {
+  margin-bottom: 20px;
+}
+
+.categories__item {
+  position: relative;
+
+  display: block;
+  width: 130px;
+
+  padding-top: 140px;
+  
+  @include font-accent(15px, 20px, 900);
+  text-decoration: none;
+
+  &::before {
+    @include pseudo;
+    top: 0;
+    left: 0;
+    
+    width: 130px;
+    height: 130px;
+  
+    border-radius: 3px;
+    
+    background-color: #ffe27f;
+    background-color: rgba(255, 226, 127, 1);
+    background-image: url(../../img/categories.png);
+    background-repeat: no-repeat;
+    background-size: 768px 128px;
+    
+    transition: background-color 0.3s;
+  }
+
+  &--vr:before {
+    background-position: 0 0;
+  }
+
+  &--self:before {
+    background-position: -130px 0px;
+  }
+
+  &--camera:before {
+    background-position: -253px 0px;
+  }
+
+  &--braslet:before {
+    background-position: -512px 0px;
+  }
+
+  &--clock:before {
+    background-position: -384px 0px;
+  }
+
+  &--kvadro:before {
+    background-position: -638px 0px;
+
+  }
+
+  &:hover:before {
+    background-color: #ffc600;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+@media #{$tablet-width} {
+
+
+  .categories__item {
+    width: 160px;
+    padding-top: 175px;
+
+    @include font-accent(18px, 20px, 900);
+
+    &::before {
+      @include pseudo;
+      top: 0;
+      left: 0;
+      
+      width: 160px;
+      height: 160px;
+
+      background-size: auto auto;
+    }
+
+    &--vr:before {
+      background-position: 0 0;
+    }
+
+    &--self:before {
+      background-position: -160px 0px;
+    }
+
+    &--camera:before {
+      background-position: -320px 0px;
+    }
+
+    &--braslet:before {
+      background-position: -480px 0px;
+    }
+
+    &--clock:before {
+      background-position: -640px 0px;
+    }
+
+    &--kvadro:before {
+      background-position: -800px 0px;
+    }
+  }
+}
+
+@media #{$desktop-width} {
+  .categories__items {
+    justify-content: space-between;
+  }
+
+ .categories__items li {
+    margin: 0;
+  }
+}
+

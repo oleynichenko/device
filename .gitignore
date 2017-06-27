@@ -23,3 +23,6 @@ Thumbs.db
 
 css/style.css
 css/style.min.css
+test.html
+test.css
+sass/blocks/*.css

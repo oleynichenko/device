@@ -1,0 +1,57 @@
+.header {    
+  margin-top: 40px;
+
+  background-color: $y-main;
+}
+
+.header__wrapper {
+  position: relative;
+
+  padding-top: 35px;
+  padding-bottom: 30px;
+
+  @include container-fluid;
+}
+
+.header__title {
+  @include vh;
+}
+
+@media #{$tablet-width} {
+  .header {
+    margin-top: 40px;
+  }
+
+  .header__wrapper {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  // .header--high {
+  //   padding-bottom: 115px;
+  // }
+}
+
+@media #{$desktop-width} {
+
+  .header {
+    margin-top: 50px;
+  }
+
+  .header__wrapper {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  // .header--high {
+  //   padding-bottom: 170px;
+  // }
+}
+
+
+
+
+
+
+
+

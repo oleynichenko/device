@@ -1,0 +1,97 @@
+.menu-main {
+  @include reset-ul;
+}
+
+.menu-main__link {
+  display: block;
+
+  padding: 15px 20px;
+
+  border-bottom: 1px solid $y-shad;
+  border-top: 1px solid $y-glare;
+
+  @include font-accent(18px, 20px, 900, #000, 3px);
+  text-decoration: none;
+  word-spacing: 5px;
+  text-transform: uppercase;
+
+  background-color: $y-sub;
+
+  &:hover {
+    background-color: $y-glare;
+    border-top-color: $y-glare;
+    border-bottom-color: $y-glare;
+  }
+
+  &:active {
+    background-color: $y-shad;
+    border-top-color: $y-shad;
+    color: rgba(#000, 0.3);
+  }
+}
+
+.menu-main__vh {
+  display: none;  
+}
+
+
+@media #{$tablet-width} {
+  .menu-main {
+    display: flex;
+    justify-content: space-between;  
+    flex-wrap: wrap;
+  }
+
+  .menu-main--header {
+    width: 100%; 
+  }
+
+  .menu-main--header .menu-main__item:nth-child(2) {
+    margin-left: 0px;
+    margin-right: auto;
+  }
+
+  .menu-main--header .menu-main__item:first-child {
+    margin-left: 0px;
+  }
+
+  .menu-main__item {
+    margin-left: 25px;
+  }
+
+  .menu-main--header .menu-main__item:last-child {
+    margin-right: -3px;
+  }
+
+  .menu-main__link {
+    display: inline;
+
+    padding: 0;
+
+    border: none;
+
+    background-color: transparent;
+
+    @include opaсity-effect();
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:active {
+      background-color: transparent;
+
+    }
+  }
+
+  .menu-main--footer {
+    width: 440px;
+  } 
+}
+
+@media #{$tablet-width-additional} {
+  .menu-main__vh {
+    display: inline;  
+  }
+}
+

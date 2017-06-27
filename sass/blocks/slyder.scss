@@ -1,0 +1,50 @@
+.slyder__item,
+.slyder__item--f {
+	display: none;
+}
+
+.slyder__input {
+
+	&[id*="input-1"]:checked ~ .slyder__items .slyder__item--f:nth-child(1) {
+		display: flex;
+	}
+
+	&[id*="input-2"]:checked ~ .slyder__items .slyder__item--f:nth-child(2) {
+		display: flex;
+	}
+
+	&[id*="input-3"]:checked ~ .slyder__items .slyder__item--f:nth-child(3) {
+		display: flex;
+	}
+}
+
+.slyder__input {
+
+	&[id*="input-1"]:checked ~ .slyder__items .slyder__item:nth-child(1) {
+		display: block;
+	}
+
+	&[id*="input-2"]:checked ~ .slyder__items .slyder__item:nth-child(2) {
+		display: block;
+	}
+
+	&[id*="input-3"]:checked ~ .slyder__items .slyder__item:nth-child(3) {
+		display: block;
+	}
+}
+
+.slyder__item,
+.slyder__item--f {
+	animation: sliding 1s;
+}
+
+@keyframes sliding {
+	0% {
+		transform: translateX(-500px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}

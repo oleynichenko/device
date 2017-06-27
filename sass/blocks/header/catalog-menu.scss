@@ -1,0 +1,147 @@
+.catalog-menu__title {
+  position: relative;
+
+  &:active {
+    background-color: $y-glare;
+    border-top-color: $y-glare;
+    color: rgba(#000, 1);
+  }
+}
+
+.catalog-menu__title:after {
+  @include pseudo();
+  top: 17px;
+  left: 130px;
+
+  width: 16px;
+  height: 16px;
+
+  background-position: -42px -1px;
+  background-image: url(../../img/sprite-header.png);
+  background-repeat: no-repeat;
+}
+.catalog-menu__items {
+  @include reset-ul;
+
+  background-color: $y-sub;
+}
+
+.catalog-menu__list ul {
+  @include reset-ul;
+}
+
+.catalog-menu__item a {
+  display: block;
+
+  padding: 15px 20px;
+  padding-left: 25px;
+
+  border-bottom: 1px solid $y-shad;
+  border-top: 1px solid $y-glare;
+
+  @include font();
+  text-decoration: none;
+  word-spacing: 5px;
+
+  background-color: $y-sub;
+
+  &:hover {
+    background-color: $y-glare;
+    border-top-color: $y-glare;
+    border-bottom-color: $y-glare;
+  }
+
+  &:active {
+    background-color: $y-shad;
+    border-top-color: $y-shad;
+    color: rgba(#000, 0.3);
+  }
+}
+
+@media #{$tablet-width} {
+  .catalog-menu {
+    position: relative;
+    width: 40%;
+  }
+
+  .catalog-menu__title {
+    display: inline-block;
+
+    padding-right: 25px;
+    margin-bottom: 20px;
+
+    &:active {
+      background-color: transparent;
+      opacity: 0.6;
+    }
+  }
+
+  .catalog-menu__title:after {
+    top: 2px;
+    right: 0;
+    left: auto;
+  }
+
+  .catalog-menu__items {
+    width: 250%; 
+    min-height: 105px;
+
+    padding: 20px 60px; 
+    margin: 0 -60px;
+
+    background-color: $y-sub;
+
+    &--js {
+      position: absolute;
+      top: 40px;
+
+      width: 250%; 
+      z-index: 100;  
+    }
+  }
+
+  .catalog-menu__list {
+    display: inline-block;
+    vertical-align: top;
+
+    width: 190px; 
+    margin-right: 40px; 
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .catalog-menu__item {
+    margin-bottom: 20px;  
+  }
+
+  .catalog-menu__item a {
+    display: inline;
+
+    padding: 0;
+
+    border: none;
+
+    background-color: transparent;
+    @include opaсity-effect;
+  
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:active {
+      background-color: transparent;
+
+    }
+  }
+}
+
+@media #{$tablet-width-additional} {
+  .catalog-menu {
+    width: 50%;
+  }
+  .catalog-menu__items {
+    width: 200%; 
+  }
+}

@@ -2,4 +2,37 @@
 @import "global/scaffolding.scss";
 @import "variables.scss";
 @import "mixins.scss";
-@import "blocks/header.scss";
+
+@import "blocks/header/header.scss";
+@import "blocks/header/hamburger.scss";
+@import "blocks/header/logo.scss";
+@import "blocks/header/main-nav.scss";
+@import "blocks/header/search.scss";
+@import "blocks/header/menu-user.scss";
+@import "blocks/header/menu-main.scss";
+@import "blocks/header/catalog-menu.scss";
+@import "blocks/top-goods.scss";
+@import "blocks/slyder.scss";
+@import "blocks/btns.scss";
+@import "blocks/categories.scss";
+@import "blocks/services.scss";
+
+
+// @import url(blocks/btns.css);
+// @import url(blocks/decor.css);
+// @import url(blocks/logo.css);
+// @import url(blocks/categories.css);
+// @import url(blocks/services.css);
+// @import url(blocks/partners.css);
+// @import url(blocks/info.css);
+// @import url(blocks/modal-map.css);
+// @import url(blocks/footer.css);
+// @import url(blocks/form.css);
+// @import url(blocks/message.css);
+// @import url(blocks/breadcrumps.css);
+// @import url(blocks/main.css);
+// @import url(blocks/filter.css);
+// @import url(blocks/sorting.css);
+// @import url(blocks/catalog.css);
+// @import url(blocks/pagination.css);
+/*@import url(blocks/map.css);*/

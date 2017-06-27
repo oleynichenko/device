@@ -1,0 +1,54 @@
+.logo {
+  font-family: "Gilroy", sans-serif;
+  text-transform: uppercase;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 900;
+  
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+// .logo--black {
+//   position: relative;
+// }
+
+.logo--black {
+  position: absolute;
+  top: -24px;
+  left: 0;
+
+  color: #000;
+}
+
+.logo--black:hover {
+  color: #444444;
+}
+
+.logo--black:active {
+  opacity: 0.6;
+}
+
+.logo--yellow {
+  color: #ffe27f;
+}
+
+.logo--yellow:hover {
+  color: #ffc600;
+}
+
+.logo--yellow:active {
+  opacity: 0.3;  
+}
+
+@media #{$tablet-width} {
+  .logo--black {
+    top: -24px;
+  }
+}
+
+@media #{$desktop-width} {
+  .logo--black {
+    top: -25px;
+  } 
+}

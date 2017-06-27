@@ -1,0 +1,27 @@
+@mixin opaсity-effect {
+  opacity: 1;
+  transition: opacity 0.1s;  
+
+  &:hover {
+    opacity: 0.6;
+	}
+
+	 &:active {
+    opacity: 0.3;
+	}
+}
+
+@mixin opaсity-effect-r {
+  opacity: 0.4;
+  transition: opacity 0.1s;  
+
+  &:hover {
+    opacity: 0.6;
+	}
+
+	 &:active {
+    opacity: 1;
+	}
+}
+
+

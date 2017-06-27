@@ -1,0 +1,20 @@
+.smooth-display__elem--anim {
+  animation: smooth-display;
+  animation-fill-mode: forwards;
+}
+.smooth-display__elem--anim-reverse {
+  animation: smooth-display;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+.smooth-display__elem--hide {
+  display: none;
+}
+@keyframes smooth-display {
+  0% { 
+    opacity: 1; 
+  }
+  100% { 
+    opacity: 0; 
+  }
+}

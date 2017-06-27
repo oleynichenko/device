@@ -1,0 +1,126 @@
+.search {
+  position: absolute;
+  top: 45px;
+  left: 0;
+
+  cursor: pointer;
+}
+
+.search input {
+  position: relative;
+
+  width: 120px;
+
+  padding: 0 0px;
+
+  @include font();
+
+  background-color: transparent;
+  border: none;  
+  outline: none;
+  z-index: 10;
+}
+
+.search label {
+  display: inline-block;
+  vertical-align: top;
+
+  width: 16px;
+  height: 18px;
+
+  margin-right: 15px;
+
+  color: rgba(0, 0, 0, 0.3);
+
+  background-image: url(../../img/sprite-header.png);
+  background-repeat: no-repeat;
+  background-position: -60px 2px;
+
+  filter: opacity(0.8);
+
+  cursor: pointer;
+} 
+
+.search__btn {
+  display: none;
+
+  position: absolute;
+  top: -15px;
+  left: 320px;
+
+  width: 50px;  
+
+  padding: 17px; 
+  
+  @include font(15px);
+  text-align: center;
+  text-decoration: none;
+
+  border: 2px solid #000;
+  background-color: transparent;
+  
+  animation: smooth-hide 0.3s;
+}
+
+.search input::-webkit-input-placeholder {color: rgba(68, 68, 68, 0.3); text-indent: 0px; transition: 0.5s ease;}
+.search input::-moz-placeholder {color: rgba(68, 68, 68, 0.3); text-indent: 0px; transition: 0.5s ease;}
+.search input:-moz-placeholder {color: rgba(68, 68, 68, 0.3); text-indent: 0px; transition: 0.5s ease;}
+.search input:-ms-input-placeholder {color: rgba(68, 68, 68, 0.3); text-indent: 0px; transition: 0.5s ease;}
+
+.search input:hover::-webkit-input-placeholder {color: rgba(68, 68, 68, 0.6); text-indent: 0px;}
+.search input:hover::-moz-placeholder {color: rgba(68, 68, 68, 0.6); text-indent: 0px;}
+.search input:hover:-moz-placeholder {color: rgba(68, 68, 68, 0.6); text-indent: 0px;}
+.search input:hover:-ms-input-placeholder {color: rgba(68, 68, 68, 0.6); text-indent: 0px;}
+
+.search input:focus::-webkit-input-placeholder {color: rgba(68, 68, 68, 0.6); text-indent: 500px;}
+.search input:focus::-moz-placeholder {color: rgba(68, 68, 68, 0.6); text-indent: 500px;}
+.search input:focus:-moz-placeholder {color: rgba(68, 68, 68, 0.6); text-indent: 500px;}
+.search input:focus:-ms-input-placeholder {color: rgba(68, 68, 68, 0.6); text-indent: 500px;}
+
+@media #{$tablet-width-additional} {
+  .search {
+    top: 37px;
+  }
+
+  .search label {
+    margin-right: 20px;
+  }
+
+  .search input {
+    width: 260px;
+  }
+
+  .search__btn::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: -320px;
+
+    width: 320px;
+    height: 2px;
+
+    background-color: #000;
+  }
+
+  .search input:focus ~ .search__btn {
+    display: block;
+  }
+
+  .search__btn:hover {
+    background-color: #000;
+
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .search__btn:active {
+    display: block;
+
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+@media #{$desktop-width} {
+  .search {
+    top: 42px;
+  }
+}
