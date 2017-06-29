@@ -8,10 +8,9 @@
   cursor: pointer;
   transition: color 0.3s ease;
 }
-
-// .logo--black {
-//   position: relative;
-// }
+.logo a {
+  text-decoration: none;
+}
 
 .logo--black {
   position: absolute;
@@ -30,11 +29,11 @@
 }
 
 .logo--yellow {
-  color: #ffe27f;
+  color: $y-main;
 }
 
 .logo--yellow:hover {
-  color: #ffc600;
+  color: $orange;
 }
 
 .logo--yellow:active {

@@ -1,0 +1,54 @@
+mixin header(param)
+	<header class="header">
+		<div class="header__wrapper">
+			<h1 class="logo logo--black"><span class="header__title">Магазин электронных товаров</span> 
+			<a #{param}>Device</a>
+			</h1>		
+			<nav class="main-nav main-nav--closed main-nav--nojs">
+				<button type="button" class="hamburger"></button>
+				<div class="main-nav__wrapper">
+					<ul class="menu-user menu-user--header">
+						<li><a href="" class="menu-user__link menu-user__link--enter">Войти</a></li>
+						<li><a href="" class="menu-user__link menu-user__link--compare">Сравнить</a></li>
+						<li><a href="" class="menu-user__link menu-user__link--cart">Корзина</a></li>
+					</ul>
+					<ul class="menu-main menu-main--header">
+						<li class="menu-main__item catalog-menu"><a class="menu-main__link catalog-menu__title" href="#">Каталог <span class="menu-main__vh">товаров</span></a>
+							<ul class="catalog-menu__items">
+								<li class="catalog-menu__list">
+									<ul>
+										<li class="catalog-menu__item "><a href="">Виртуальная реальность</a></li>
+										<li class="catalog-menu__item "><a href="">Моноподы для селфи</a></li>
+										<li class="catalog-menu__item "><a href="">Экшн-камеры</a></li>
+
+									</ul>
+								</li>
+								<li class="catalog-menu__list">
+									<ul>
+										<li class="catalog-menu__item "><a href="">Фитнесс-браслеты</a></li>
+										<li class="catalog-menu__item "><a href="">Умные часы</a></li>
+									</ul>
+								</li>
+								<li class="catalog-menu__list">
+									<ul>
+										<li class="catalog-menu__item "><a href="">Квадрокоптеры</a></li>
+										<li class="catalog-menu__item "><a href="map.html">Карта</a></li>
+										<li class="catalog-menu__item "><a href="message.html">Обратная форма</a></li>
+										<li class="catalog-menu__item "><a href="catalog.html">Каталог</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-main__item"><a class="menu-main__link" href="#">Доставка</a></li>
+						<li class="menu-main__item"><a class="menu-main__link" href="#">Гарантия</a></li>
+						<li class="menu-main__item"><a class="menu-main__link" href="#">Описание</a></li>
+					</ul>
+				</div>
+			</nav>
+			<form class="search">
+				<label for="search-input"></label>
+				<input type="text" placeholder="Поиск по сайту" id="search-input">
+				<a href="#" class="search__btn">Найти</a>						
+			</form>
+		</div>
+	</header>

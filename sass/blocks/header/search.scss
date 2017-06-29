@@ -32,7 +32,7 @@
 
   color: rgba(0, 0, 0, 0.3);
 
-  background-image: url(../../img/sprite-header.png);
+  background-image: url(../img/sprite-header.png);
   background-repeat: no-repeat;
   background-position: -60px 2px;
 
@@ -121,6 +121,6 @@
 
 @media #{$desktop-width} {
   .search {
-    top: 42px;
+    top: 48px;
   }
 }

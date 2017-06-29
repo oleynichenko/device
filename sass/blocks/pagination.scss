@@ -1,0 +1,41 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include font-accent(16px, 16px, 900, #000, 2px);
+  text-transform: uppercase;
+
+  background-color: #ebebeb;
+}
+
+.pagination__btn {
+  display: block;
+  width: 126px;
+  padding: 28px 0;
+
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.pagination__btn:hover {
+  background-color: #d9d9d9;  
+}
+
+.pagination__btn:active {
+  color: #acacac;  
+}
+
+.pagination__number {
+  margin: 0 15px;
+  text-decoration: none;
+  @include opaсity-effect;
+}
+
+.pagination__btn:first-child {
+  margin-right: auto;
+}
+
+.pagination__btn:last-child {
+  margin-left: auto;
+}

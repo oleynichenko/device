@@ -1,0 +1,38 @@
+.partners {
+  @include container-fluid;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  margin-bottom: 95px;
+}
+
+.partners__title {
+  @include vh;
+}
+
+.partners img {
+  width: 260px;
+  height: 100px;
+
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.partners img:hover {
+  filter: none;
+}
+
+@media #{$tablet-width} {
+
+  .partners img:nth-child(2n) {
+    margin-right: 130px;
+  }
+}
+
+@media #{$desktop-width} {
+  .partners img:nth-child(2n) {
+    margin-right: 0;
+  }
+}

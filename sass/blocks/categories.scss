@@ -19,6 +19,11 @@
 
 .categories__items li {
   margin-bottom: 20px;
+  margin-right: 5px;
+
+  &::last-child {
+    margin-right: 0;
+  }
 }
 
 .categories__item {
@@ -44,7 +49,7 @@
     
     background-color: #ffe27f;
     background-color: rgba(255, 226, 127, 1);
-    background-image: url(../../img/categories.png);
+    background-image: url(../img/categories.png);
     background-repeat: no-repeat;
     background-size: 768px 128px;
     
@@ -86,11 +91,16 @@
 }
 
 @media #{$tablet-width} {
-
+  .categories__items li {
+    // margin-right: 60px;
+    margin-right: 0px;  
+    width: 33%; 
+  }
 
   .categories__item {
     width: 160px;
     padding-top: 175px;
+    margin: 0 auto; 
 
     @include font-accent(18px, 20px, 900);
 
@@ -138,6 +148,7 @@
 
  .categories__items li {
     margin: 0;
+    width: auto;  
   }
 }
 

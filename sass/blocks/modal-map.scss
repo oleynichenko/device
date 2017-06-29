@@ -1,0 +1,39 @@
+.modal-map {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 70vh;
+
+  margin: 0 auto;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) ;
+}
+.modal-map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-map__title {
+  @include vh;
+}
+
+.modal-map__btn-switch {
+  @include btn;
+  @include btn__switch;
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  cursor: pointer;
+}
+
+@media #{$tablet-width} {
+
+  .modal-map__btn-switch {
+    top: 30px;
+    right: 30px;
+  }
+}

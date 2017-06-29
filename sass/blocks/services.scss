@@ -1,4 +1,4 @@
-@keyframes slide-delivery {
+@mixin slide-delivery ($bgpr-first: 0px, $bgpr-second: 70px, $bgpr-top: 85px) {
   0% {
     transform: translateX(-200px); 
     opacity: 0;
@@ -7,12 +7,20 @@
   60% {
     transform: translateX(0px); 
     opacity: 1;
-    background-position: top 85px right 0px;
+    background-position: top $bgpr-top right $bgpr-first;
   }
 
   100% {
-    background-position: top 85px right 70px;
+    background-position: top $bgpr-top right $bgpr-second;
   }
+}
+
+@keyframes slide-delivery-tb {
+    @include slide-delivery(-20px, 0px, 55px);
+}
+
+@keyframes slide-delivery-ds {
+    @include slide-delivery();
 }
 
 @keyframes slide-garant {
@@ -29,20 +37,31 @@
   }
 }
 
-@keyframes slide-credit {
+@mixin slide-credit($bgpr-first: 70px, $bgpr-second: 155px, $bgpr-top: 85px) {
   0% {
     transform: translateY(-200px); 
     opacity: 0;
-    background-position: top 85px right 70px;
+    background-position: $bgpr-top right $bgpr-first;
   }
+  
   60% {
     transform: translateY(0px); 
     opacity: 1;
-    background-position: top 155px right 70px;
+    background-position: top $bgpr-second right $bgpr-first;
   }
+  
   100% {
-    background-position: top 85px right 70px;
+    background-position: $bgpr-top right $bgpr-first;
   }
+
+}
+
+@keyframes slide-credit-tb {  
+  @include slide-credit(0px, 110px);
+}
+
+@keyframes slide-credit-ds {  
+  @include slide-credit();
 }
 
 .services {
@@ -75,16 +94,16 @@ input[name="services-toogle"] {
   background-position: top 0px center;
 
   &--delivery {
-    background-image: url(../../img/runman.png);
+    background-image: url(../img/runman.png);
     background-position: top 30px center;
   }
 
   &--garant {
-    background-image: url(../../img/warranty.png);
+    background-image: url(../img/warranty.png);
   }
 
   &--credit {
-    background-image: url(../../img/credit.png);
+    background-image: url(../img/credit.png);
     background-position: top 10px center;
   }
 }
@@ -151,32 +170,30 @@ input[id="services-toggle-input-3"]:checked ~ .services__toggle label:nth-child(
   }
 
   .services__item {
-    padding: 50px 170px 50px 220px;
-    background-position: top 85px right 0px;  
+    padding: 60px 170px 40px 220px;
+    background-position: top 55px right 0px;  
   }
 
   .services__item--delivery {
 
-    animation: slide-delivery 0.5s ease-out;
+    animation: slide-delivery-tb 0.5s ease-out;
   }
 
   .services__item--garant {
-    /*background-position: top 85px right 70px;  */
-
     animation: slide-garant 0.5s ease-out;
   }
 
   .services__item--credit {
-    /*background-position: top 85px right 70px; */
-
-    animation: slide-credit 0.5s ease-out;
+    animation: slide-credit-tb 0.5s ease-out;
   }
 
   .services__title {
-    @include font-accent(47px, 47px, 900, #000, 2px);
+    @include font-accent(30px, 30px, 900, #000, 2px);
 
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+
+    text-align: left;
   }
 
   .services__desctiption {
@@ -184,6 +201,7 @@ input[id="services-toggle-input-3"]:checked ~ .services__toggle label:nth-child(
 
     @include font(15px, 30px, 300);
     text-align: left;
+    max-width: none;
   }
 
   .services__toggle {
@@ -261,7 +279,7 @@ input[id="services-toggle-input-3"]:checked ~ .services__toggle label:nth-child(
   }
 
   .services__item--delivery {
-    animation: slide-delivery 0.5s ease-out;
+    animation: slide-delivery-ds 0.5s ease-out;
   }
 
   .services__item--garant {
@@ -269,16 +287,13 @@ input[id="services-toggle-input-3"]:checked ~ .services__toggle label:nth-child(
   }
 
   .services__item--credit {
-    animation: slide-credit 0.5s ease-out;
+    animation: slide-credit-ds 0.5s ease-out;
   }
 
   .services__title {
-    margin-bottom: 40px;
-    text-align: left;
-  }
+    @include font-accent(47px, 47px, 900, #000, 2px);
 
-  .services__desctiption {
-    max-width: none;
+    margin-bottom: 40px;
   }
 
   .services__toggle {

@@ -1,0 +1,83 @@
+.catalog {
+  width: 760px;
+}
+
+.catalog__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -40px;
+  justify-content: space-between;
+}
+
+.catalog__title {
+  @include vh;
+}
+
+.catalog__item {
+  position: relative;
+  width: 360px;
+
+  margin-left: 40px;
+  margin-bottom: 50px;
+}
+
+.catalog__item-img {
+  width: 360px;
+  height: 380px;
+  
+  margin-bottom: 35px;
+  transition: opacity 0.2s;
+}
+
+.catalog__item-actions:hover ~ .catalog__item-img,
+.catalog__item-img:hover {
+  opacity: 0.7;
+}
+
+.catalog__item-actions {
+  display: none;
+  position: absolute;
+  width: 200px;
+  top: 175px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 100;
+  animation: smooth-hide 0.3s;
+}
+
+.catalog__item:hover .catalog__item-actions {
+  display: block;
+}
+
+.catalog__item-btn {
+  width: 200px;
+}
+
+.catalog__item-compare {
+  display: block;
+
+  margin-top: 30px;
+
+  text-align: center;
+  text-decoration: none;
+  @include font(13px, 13px, 300, #000);
+  @include opaсity-effect(0.5, 1, 0.2);
+}
+
+.catalog__item-text {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.catalog__item-title {
+  @include font-accent(18px, 20px, 900, #000);
+}
+
+.catalog__item-price {
+  margin-right: 10px;
+
+  white-space: nowrap;
+  @include font(15px, 20px, 300, #000);
+}

@@ -1,0 +1,52 @@
+.breadcrumps {
+  display: flex;
+  @include reset-ul;
+}
+
+.breadcrumps__item {
+  position: relative;
+  padding-right: 30px;
+}
+
+.breadcrumps__item:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 15px;
+
+  width: 4px;
+  height: 7px;
+
+  background-image: url(../img/catalog-spr.png);
+  background-repeat: no-repeat;
+  background-position: -16px -2px;
+}
+
+.breadcrumps__link {
+  @include font(13px, 13px, 300, #000);
+
+  color: rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+}
+
+.breadcrumps__link:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.breadcrumps__link:active {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+@media #{$tablet-width} {
+  .breadcrumps__link {
+    @include font(14px, 14px, 300, #000);
+  }
+
+  .breadcrumps__item {
+    padding-right: 40px;
+
+    &::after {
+      right: 20px;
+    }
+  }
+}

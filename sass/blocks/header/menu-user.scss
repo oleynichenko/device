@@ -41,7 +41,7 @@
   top: 20px;
   left: 20px;
 
-  background-image: url(../../img/sprite-header.png);
+  background-image: url(../img/sprite-header.png);
   background-repeat: no-repeat;
 }
 
@@ -62,6 +62,9 @@
     width: 13px;
     height: 12px;
     background-position: -27px -1px;
+}
+.menu-user--footer {
+  display: none;
 }
 
 @media #{$tablet-width} {
@@ -111,14 +114,22 @@
   }
 
   .menu-user--footer {
-    width: 330px;
-    color: rgba(255, 255, 255, 0.7);
+    margin-left: 0;
+    width: 50%;
   }
+
+  .menu-user__link--footer {
+    color: #fff;
+    opacity: 0.7;
+  }
+
   .menu-user__link--footer:hover {
-    color: rgba(255, 255, 255, 1);
+    opacity: 1;
   }
+
   .menu-user__link--footer:active {
-    color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    opacity: 0.3;
   }
 
   .menu-user__link--footer:before {
@@ -139,5 +150,10 @@
     width: 50%;    
 
     margin-left: 50%;
+  }
+
+  .menu-user--footer {
+    width: 40%;
+    margin-left: 0;
   }
 }

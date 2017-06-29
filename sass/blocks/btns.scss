@@ -1,23 +1,10 @@
-// .btn {
-//   display: block;
-//   padding: 0;
-//   border: none;
-//   cursor: pointer;
-//   font: inherit;
-//   outline: none;
-
-//   text-decoration: none;
-//   color: inherit;
-//   text-align: center;
-// }
-
 .btn__unfold {
   @include btn;
   display: inline-block;
 
   margin: 16px 0;
 
-  @include font-accent(18px, 8px, 900, #000, 2px)
+  @include font-accent(18px, 8px, 900, #000, 2px);
   text-transform: uppercase;
 
   background-color: #ffc600;
@@ -34,7 +21,7 @@
   }
 }
 
-.btn__switch {
+@mixin btn__switch {
   width: 54px;
   height: 54px;
 
@@ -43,44 +30,52 @@
   background-color: rgba(255, 198, 0, 0.5);
 
   transition: background-color 0.3s;
+  outline: none;
 
   &:hover {
-  background-color: rgba(255, 198, 0, 1);
+    background-color: rgba(255, 198, 0, 1);
+  }
+  &:active {
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 26px;
+    height: 2px;
+
+    margin: auto;
+
+    background-color: #fff;
+    transition: transform 0.3s;
+  } 
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:active::before, 
+  &:active::after {
+    opacity: 0.3;
+  }
+
+  &:hover::before {
+    transform: rotate(135deg);
+  }
+
+  &:hover::after {
+    transform: rotate(45deg);
   }
 }
 
-.btn__switch:before,
-.btn__switch:after {
-  content: "";
-  position: absolute;
-  width: 26px;
-  height: 2px;
-  background-color: #fff;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  transition: transform 0.3s;
-} 
-
-.btn__switch:before {
-  transform: rotate(45deg);
-}
-
-.btn__switch:after {
-  transform: rotate(-45deg);
-}
-
-.btn__switch:active:before, 
-.btn__switch:active:after {
-  opacity: 0.3;
-}
-
-.btn__switch:hover:before {
-  transform: rotate(135deg);
-}
-
-.btn__switch:hover:after {
-  transform: rotate(45deg);
-}

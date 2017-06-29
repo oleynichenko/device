@@ -1,124 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Message</title>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/smooth-display.css">
+<meta charset="UTF-8">
+<title>Message</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.min.css">
+<link rel="stylesheet" href="css/smooth-display.css">
 </head>
-<body>
-<header class="header container--center">
-	<h2><span class="visually-hidden">Магазин электронных товаров</span> <a class="logo logo--black">Device </a></h2>		
-	<nav>
-		<div class="row row--mb50">
-			<form class="search">
-				<label for="search-input"></label>
-				<input type="text" placeholder="Поиск по сайту" id="search-input">
-				<a href="#" class="search__btn">Найти</a>						
-			</form>
-			<ul class="menu-user menu-user--header">
-				<li><a href="" class="menu-user__link menu-user__link--header menu-user__link--enter">Войти</a></li>
-				<li><a href="" class="menu-user__link menu-user__link--header menu-user__link--compare">Сравнить</a></li>
-				<li><a href="" class="menu-user__link menu-user__link--header menu-user__link--cart">Корзина</a></li>
-			</ul>
-		</div>
-		<div class="row row--mb20">
-			<a class="catalog-menu__title effect menu-main--font" href="#">Каталог товаров</a>
-			<ul class="menu-main menu-main--header menu-main--font">
-				<li><a class="effect" href="">Доставка</a></li>
-				<li><a class="effect" href="">Гарантия</a></li>
-				<li><a class="effect" href="">Описание</a></li>
-			</ul>
-		</div>
-		<section class="catalog-menu">
-			<h2 class="visually-hidden">Каталог товаров</h2>
-			<ul class="catalog-menu__items">
-				<li class="catalog-menu__list">
-					<ul>
-						<li class="catalog-menu__item effect"><a href="">Виртуальная реальность</a></li>
-						<li class="catalog-menu__item effect"><a href="">Моноподы для селфи</a></li>
-						<li class="catalog-menu__item effect"><a href="">Экшн-камеры</a></li>
-						<li class="catalog-menu__item effect"><a href="">Экшн-камеры</a></li>
-					</ul>
-				</li>
-				<li class="catalog-menu__list">
-					<ul>
-						<li class="catalog-menu__item effect"><a href="">Фитнесс-браслеты</a></li>
-						<li class="catalog-menu__item effect"><a href="">Умные часы</a></li>
-					</ul>
-				</li>
-				<li class="catalog-menu__list">
-					<ul>
-						<li class="catalog-menu__item effect"><a href="">Квадрокоптеры</a></li>
-					</ul>
-				</li>
-			</ul>
-		</section>
-	</nav>
-</header>
-<main>
-	<div class="main__header container--center">
-		<h1 class="main__title font-main">Связаться с нами</h1>
-		<ol class="breadcrumps">
-			<li class="breadcrumps__item"><a class="breadcrumps__link"href="">Главная</a></li>
-			<li class="breadcrumps__item"><a class="breadcrumps__link"href="">Обратная связь</a></li>
-		</ol>
-	</div>
-	<div class="container--center row--mb50">
-		<article class="message">
-		<h2 class="visually-hidden">Форма для отправки сообщений</h2>
-		<button class="btn btn__switch message__btn-switch"></button>
-		<form class="form" action="#" method="POST" name="message-form">
-			<p class="form__item form__name">
-				<label for="user-name">Ваше имя</label>
-				<input id="user-name" type="text" placeholder="Представьтесь пожалуйста">
-			</p>
-			<p class="form__item form__email">
-				<label for="user-email">Ваш e-mail</label>
-				<input id="user-email" type="email" placeholder="Для отправки ответа">
-			</p>
-			<p class="form__item form__text">
-				<label for="user-msg">Текст письма:</label>
-				<textarea name="form__text"  id="user-msg" placeholder="В свободной форме"></textarea>
-			</p>
-			<button class="btn btn__unfold btn__unfold--font form__btn">Отправить</button>
-		</form>
-	</article>
-	</div>
-</main>
-<footer class="footer">
-	<div class="container--center">
-		<div class="row row--mb50">
-			<a class="logo logo--yellow">Device</a>
-			<ul class="menu-user menu-user--footer">
-				<li><a href="" class="menu-user__link menu-user__link--footer menu-user__link--enter">Войти</a></li>
-				<li><a href="" class="menu-user__link menu-user__link--footer menu-user__link--compare">Сравнить</a></li>
-				<li><a href="" class="menu-user__link menu-user__link--footer menu-user__link--cart">Корзина</a></li>
-			</ul>
-		</div>
-		<div class="row row--mb50">
-			<address class="footer__adress">г. Москва, ул. Строителей, 15</address>
-			<ul class="menu-main menu-main--footer menu-main--font">
-				<li class="menu-main__item effect"><a href="">Доставка</a></li>
-				<li class="menu-main__item effect"><a href="">Гарантия</a></li>
-				<li class="menu-main__item effect"><a href="">Описание</a></li>
-			</ul>
-			<span class="footer__phone">Тел.: +7 (495) 495-95-95</span>
-		</div>
-		<div class="row">
-			<div class="footer__decor decor decor--yellow"></div>
-			<p class="footer__social">
-			<b class="visually-hidden">Подпишитесь на новости!</b>
-				<a href="" class="footer__social-item footer__social-item--fb effect30-60-10">Фейсбук</a>
-				<a href="" class="footer__social-item footer__social-item--insta effect30-60-10">Инстаграмм</a>
-				<a href="" class="footer__social-item footer__social-item--twit effect30-60-10">Твиттер</a>
-			</p>
-			<p class="footer__copyright">Разработано в <a class="footer__copyright__link" href="http://htmlacademy.ru">HTML Academy</a></p>     
-		</div>
-	</div>
-</footer>
-<script src="js/smooth-display.js"></script>
+<body><header class="header">
+<div class="header__wrapper">
+<h1 class="logo logo--black"><span class="header__title">Магазин электронных товаров</span> 
+<a href='index.html'>Device</a>
+</h1>		
+<nav class="main-nav main-nav--closed main-nav--nojs">
+<button type="button" class="hamburger"></button>
+<div class="main-nav__wrapper">
+<ul class="menu-user menu-user--header">
+<li><a href="" class="menu-user__link menu-user__link--enter">Войти</a></li>
+<li><a href="" class="menu-user__link menu-user__link--compare">Сравнить</a></li>
+<li><a href="" class="menu-user__link menu-user__link--cart">Корзина</a></li>
+</ul>
+<ul class="menu-main menu-main--header">
+<li class="menu-main__item catalog-menu"><a class="menu-main__link catalog-menu__title" href="#">Каталог <span class="menu-main__vh">товаров</span></a>
+<ul class="catalog-menu__items">
+<li class="catalog-menu__list">
+<ul>
+<li class="catalog-menu__item "><a href="">Виртуальная реальность</a></li>
+<li class="catalog-menu__item "><a href="">Моноподы для селфи</a></li>
+<li class="catalog-menu__item "><a href="">Экшн-камеры</a></li>
+</ul>
+</li>
+<li class="catalog-menu__list">
+<ul>
+<li class="catalog-menu__item "><a href="">Фитнесс-браслеты</a></li>
+<li class="catalog-menu__item "><a href="">Умные часы</a></li>
+</ul>
+</li>
+<li class="catalog-menu__list">
+<ul>
+<li class="catalog-menu__item "><a href="">Квадрокоптеры</a></li>
+<li class="catalog-menu__item "><a href="map.html">Карта</a></li>
+<li class="catalog-menu__item "><a href="message.html">Обратная форма</a></li>
+<li class="catalog-menu__item "><a href="catalog.html">Каталог</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-main__item"><a class="menu-main__link" href="#">Доставка</a></li>
+<li class="menu-main__item"><a class="menu-main__link" href="#">Гарантия</a></li>
+<li class="menu-main__item"><a class="menu-main__link" href="#">Описание</a></li>
+</ul>
+</div>
+</nav>
+<form class="search">
+<label for="search-input"></label>
+<input type="text" placeholder="Поиск по сайту" id="search-input">
+<a href="#" class="search__btn">Найти</a>						
+</form>
+</div>
+</header><main>
+<div class="main__header">
+<h1 class="main__title">Связаться с нами</h1>
+<ol class="breadcrumps main__breadcrumps">
+<li class="breadcrumps__item"><a class="breadcrumps__link" href="">Главная</a></li>
+<li class="breadcrumps__item"><a class="breadcrumps__link" href="">Обратная связь</a></li>
+</ol>
+</div>
+<div class="main__content main__content--fluid">
+<article class="message">
+<h2 class="message__title">Форма для отправки сообщений</h2>
+<button class="message__btn-switch message__btn-switch--none"></button>
+<form class="form" action="#" method="POST" name="message-form">
+<p class="form__item form__name">
+<label for="user-name">Ваше имя</label>
+<input id="user-name" type="text" placeholder="Представьтесь пожалуйста">
+</p>
+<p class="form__item form__email">
+<label for="user-email">Ваш e-mail</label>
+<input id="user-email" type="email" placeholder="Для отправки ответа">
+</p>
+<p class="form__item form__text">
+<label for="user-msg">Текст письма:</label>
+<textarea name="form__text"  id="user-msg" placeholder="В свободной форме"></textarea>
+</p>
+<button class="btn__unfold form__btn">Отправить</button>
+</form>
+</article>
+</div>
+</main><footer class="footer">
+<div class="footer__wrapper">
+<a class="logo logo--yellow footer__logo">Device</a>
+<ul class="menu-user menu-user--footer">
+<li><a href="" class="menu-user__link menu-user__link--footer menu-user__link--enter">Войти</a></li>
+<li><a href="" class="menu-user__link menu-user__link--footer menu-user__link--compare">Сравнить</a></li>
+<li><a href="" class="menu-user__link menu-user__link--footer menu-user__link--cart">Корзина</a></li>
+</ul>
+<address class="footer__adress">г. Москва, ул. Строителей, 15</address>
+<ul class="menu-main menu-main--footer">
+<li class="menu-main__item"><a class="menu-main__link menu-main__link--footer" href="">Доставка</a></li>
+<li class="menu-main__item"><a class="menu-main__link menu-main__link--footer" href="">Гарантия</a></li>
+<li class="menu-main__item"><a class="menu-main__link menu-main__link--footer" href="">Описание</a></li>
+</ul>
+<span class="footer__phone">Тел.: +7 (495) 495-95-95</span>
+<p class="footer__social">
+<b class="footer__social-title">Подпишитесь на новости!</b>
+<a href="" class="footer__social-item footer__social-item--fb effect30-60-10">Фейсбук</a>
+<a href="" class="footer__social-item footer__social-item--insta effect30-60-10">Инстаграмм</a>
+<a href="" class="footer__social-item footer__social-item--twit effect30-60-10">Твиттер</a>
+</p>
+<p class="footer__copyright">Разработано в <a class="footer__copyright__link" href="http://htmlacademy.ru">HTML Academy</a></p>
+</div>
+</footer><script src="js/smooth-display.js"></script>
+<script src="js/hamburger.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+.sorting {
+  position: relative;
+}
+
+.sorting__title {
+  display: inline;
+
+  margin-right: 55px;
+  @include font-accent(16px, 16px, 900, #000, 2px);
+  text-transform: uppercase;
+}
+
+.sorting__item {
+  margin-right: 25px;
+
+  text-decoration: none;
+  @include font(14px, 16px, normal, #000);
+  @include opaсity-effect(0.4, 0.6, 1);
+}
+
+.sorting__order {
+  position: absolute;
+
+  display: block;
+  width: 17px;
+  height: 9px;
+
+  background-image: url(../img/catalog-spr.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+  @include opaсity-effect(0.4, 0.6, 1);
+}
+
+.sorting__order-title {
+  @include vh;
+}
+
+.sorting__order--down {
+  top: 5px;
+  right: 0px;
+
+  margin-left: auto;
+
+  background-position: -24px 0;
+}
+
+.sorting__order--up {
+  top: 5px;
+  right: 40px;
+
+  background-position: -24px 0;
+  transform: rotate(180deg);
+}

@@ -1,0 +1,64 @@
+.message__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.message {
+  width: 75%;
+  max-width: 768px;
+
+  padding: 70px 10% 45px;
+  margin: 0 auto;
+
+  background-color: #fff;
+  box-shadow: 
+    0 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.message__title {
+  @include vh;
+}
+
+.message--pop {
+  position: absolute;  
+  top: 50%;
+  left: 0;
+  right: 0;
+
+  transform: translateY(-50%);
+  box-shadow: 
+      0 10px 20px rgba(0, 0, 0, 0.2),
+    60px 0px 40px -60px rgba(0, 0, 0, 0.7),
+   -60px 0px 40px -60px rgba(0, 0, 0, 0.7);
+}
+
+.message__btn-switch {
+  @include btn;
+  @include btn__switch;
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  &--none {
+    display: none;
+  }
+}
+
+@media #{$tablet-width} {
+  .message {
+    width: 65%;
+    padding: 95px 80px 85px;
+  }
+
+  .message__btn-switch {
+    top: 30px;
+    right: 30px;
+  }
+}
+

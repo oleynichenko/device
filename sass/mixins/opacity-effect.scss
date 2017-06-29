@@ -1,13 +1,13 @@
-@mixin opaсity-effect {
-  opacity: 1;
+@mixin opaсity-effect($normal: 1, $hover: 0.6, $active: 0.3) {
+  opacity: $normal;
   transition: opacity 0.1s;  
 
   &:hover {
-    opacity: 0.6;
+    opacity: $hover;
 	}
 
 	 &:active {
-    opacity: 0.3;
+    opacity: $active;
 	}
 }
 
@@ -17,10 +17,23 @@
 
   &:hover {
     opacity: 0.6;
+  }
+
+   &:active {
+    opacity: 1;
+  }
+}
+
+@mixin opaсity-30-60-10 {
+  opacity: 0.3;
+  transition: opacity 0.1s;  
+
+  &:hover {
+    opacity: 0.6;
 	}
 
 	 &:active {
-    opacity: 1;
+    opacity: 0.1;
 	}
 }
 

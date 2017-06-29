@@ -10,10 +10,16 @@ var rename = require("gulp-rename");
 var imagemin = require("gulp-imagemin");
 var run = require("run-sequence");
 var del = require("del");
+var pug = require("gulp-pug");
 
 var realFavicon = require ('gulp-real-favicon');
 var fs = require('fs');
 
+gulp.task("pug", function() {
+  gulp.src("pug/*.pug")
+    .pipe(pug())
+    .pipe(gulp.dest("."));
+});
 
 gulp.task("style", function() {
   gulp.src("sass/style.scss")
@@ -35,7 +41,7 @@ gulp.task("style", function() {
     .pipe(server.stream());
 });
 
-gulp.task("serve", ["style"], function() {
+gulp.task("serve", ["run-src"], function() {
   server.init({
     server: ".",
     notify: false,
@@ -45,9 +51,13 @@ gulp.task("serve", ["style"], function() {
   });
 
   gulp.watch("sass/**/*.scss", ["style"]);
+  gulp.watch("pug/**/*.pug", ["pug"]);
   gulp.watch("*.html").on("change", server.reload);
 });
 
+gulp.task("run-src", function(fn) {
+  run("pug", "style", fn);
+});
 
 // сборка
 
@@ -91,7 +101,7 @@ gulp.task("clean", function() {
   return del("build");
 });
 
-gulp.task("build", function(fn) {
+gulp.task("run-build", function(fn) {
   run("clean", "copy", "style-build", "images", "generate-favicon", "inject-favicon-markups", fn);
 });
 
@@ -101,11 +111,11 @@ gulp.task("copy-portfolio", function() {
  return gulp.src([
    "build/**/*.*"
    ])
- .pipe(gulp.dest("../oleynichenko.github.io/barbershop"));
+ .pipe(gulp.dest("../oleynichenko.github.io/device"));
 });
 
 gulp.task("clean-portfolio", function() {
-  return del(["../oleynichenko.github.io/barbershop/**", "!../oleynichenko.github.io/barbershop"], {force: true});
+  return del(["../oleynichenko.github.io/device/**", "!../oleynichenko.github.io/device"], {force: true});
 });
 
 gulp.task("build-portfolio", function(fn) {
@@ -113,6 +123,9 @@ gulp.task("build-portfolio", function(fn) {
 });
 
 //favicon
+
+var realFavicon = require ('gulp-real-favicon');
+var fs = require('fs');
 
 // File where the favicon markups are stored
 var FAVICON_DATA_FILE = 'faviconData.json';
@@ -123,26 +136,25 @@ var FAVICON_DATA_FILE = 'faviconData.json';
 // package (see the check-for-favicon-update task below).
 gulp.task('generate-favicon', function(done) {
   realFavicon.generateFavicon({
-    masterPicture: 'build/img/brb.png',
+    masterPicture: 'build/img/favicon.png',
     dest: 'build/img/icons',
-    iconsPath: 'img/icons/',
+    iconsPath: 'img',
     design: {
       ios: {
         pictureAspect: 'backgroundAndMargin',
         backgroundColor: '#ffffff',
-        margin: '11%',
+        margin: '35%',
         assets: {
           ios6AndPriorIcons: false,
           ios7AndLaterIcons: false,
           precomposedIcons: false,
           declareOnlyDefaultIcon: true
-        },
-        appName: 'BarberShop'
+        }
       },
       desktopBrowser: {},
       windows: {
         pictureAspect: 'noChange',
-        backgroundColor: '#e6e6e6',
+        backgroundColor: '#ffc40d',
         onConflict: 'override',
         assets: {
           windows80Ie10Tile: false,
@@ -152,14 +164,13 @@ gulp.task('generate-favicon', function(done) {
             big: false,
             rectangle: false
           }
-        },
-        appName: 'BarberShop'
+        }
       },
       androidChrome: {
         pictureAspect: 'noChange',
-        themeColor: '#f7f7f7',
+        themeColor: '#fcff66',
         manifest: {
-          name: 'BarberShop',
+          name: 'Device',
           display: 'standalone',
           orientation: 'notSet',
           onConflict: 'override',
@@ -172,7 +183,7 @@ gulp.task('generate-favicon', function(done) {
       },
       safariPinnedTab: {
         pictureAspect: 'silhouette',
-        themeColor: '#4a4a4a'
+        themeColor: '#ffe27f'
       }
     },
     settings: {
@@ -190,9 +201,9 @@ gulp.task('generate-favicon', function(done) {
 // this task whenever you modify a page. You can keep this task
 // as is or refactor your existing HTML pipeline.
 gulp.task('inject-favicon-markups', function() {
-  return gulp.src(['build/*.html'])
+  return gulp.src([ "build/*.html" ])
     .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest("build"));
 });
 
 // Check for updates on RealFaviconGenerator (think: Apple has just

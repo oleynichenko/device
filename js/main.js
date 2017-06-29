@@ -18,15 +18,16 @@
   
   if(document.location.href.indexOf('index') != -1) {
     main(); 
+    form();
+  }
+
+  if(document.location.href.indexOf('message') != -1) {
+    form();
   }
 
 })();
 
 function main() {
-
-  // Сдвигаем Slider
-  var slider = document.querySelector(".slider");
-  slider.classList.add("slider--js");
 
   // ОТКРЫТИЕ-ЗАКРЫТИЕ Message
 
@@ -66,6 +67,11 @@ function main() {
 		}
   });
 
+
+};
+
+function form() {
+
   // ПРОВЕРКА ВАЛИДНОСТИ ПОЛЕЙ Form
 
   var messageForm = document.querySelector(".form");
@@ -96,11 +102,8 @@ function main() {
   messageForm.addEventListener("blur", function(event) {
   	var elem = event.target;
   	if(resendIndex  && !!elem.value) { 
-  		console.log(!!elem.value);		
 	  	elem.parentElement.classList.remove("form__item--error");
   	}
   }, true);
-
-};
-
+}
 

@@ -1,0 +1,160 @@
+.footer {
+  padding: 55px 0px 35px;
+
+  color: #fff;
+
+  background-color: #444444;
+}
+
+.footer__wrapper {
+  @include container-fluid;
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &::before {
+    @include pseudo;
+    bottom: 15px;
+    left: 0;
+
+    height: 7px;
+    width: 80px;
+
+    background-color: $y-main;  
+  }
+}
+
+
+.footer__logo {
+  width: 100%;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.footer__adress,
+.footer__phone {
+  width: 100%;
+
+  @include font(15px, 24px, 300, #fff);
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer__phone {
+  margin-bottom: 25px;
+}
+
+.footer__social {
+  width: 100%;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.footer__social-title {
+  @include vh;
+}
+
+.footer__social-item {
+  display: inline-block;
+  vertical-align: top;
+
+  width: 39px;
+  height: 38px;
+
+  margin-right: 15px;
+
+  font-size: 0;
+
+  background-image: url(../img/social.png);
+  background-repeat: no-repeat;
+
+  @include opaсity-30-60-10;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.footer__social-item--insta {
+  background-position: -54px 0;
+}
+
+.footer__social-item--twit {
+  background-position: -108px 0;
+}
+
+.footer__copyright {
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+
+  font-size: 0;
+}
+
+.footer__copyright__link {
+  display: block;
+  width: 27px;
+  height: 34px;
+  background-image: url(../img/html.png);
+  background-repeat: no-repeat;
+}
+
+.footer__copyright__link {
+  filter: saturate(0.3);  
+}
+
+.footer__copyright__link:hover {
+  filter: saturate(1);  
+}
+
+.footer__copyright__link:active {
+  filter: opacity(0.3);
+}
+
+@media #{$tablet-width} {
+
+  .footer {
+    padding: 60px 0px 60px;
+  }
+
+  .footer__logo {
+    width: 50%;
+    margin-bottom: 50px;
+
+    text-align: left;    
+  }
+
+  .footer__adress,
+  .footer__phone {
+    width: 50%;
+
+    margin-bottom: 50px;
+
+    text-align: left;
+  }
+
+  .footer__phone {
+    text-align: right;
+  }
+
+  .footer__social {
+    width: 100%;
+    margin-bottom: 0;
+
+    text-align: center;
+  }
+}
+
+@media #{$tablet-width-additional} {
+
+  .footer__logo {
+    width: 60%;
+  }
+
+  .footer__adress,
+  .footer__phone {
+    width: 20%;
+  }
+}
