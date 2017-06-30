@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Каталог DEVICE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.min.css">
 <link rel="stylesheet" href="css/smooth-display.css">
@@ -67,15 +68,16 @@
 <li class="breadcrumps__item"><a class="breadcrumps__link">Моноподы для селфи</a></li>
 </ol>
 </div>
-<div class="main__content">
-<aside class="sidebar">
-<header class="sidebar__header">
-<div class="sidebar__wrapper">
-<b class="sidebar__title">Фильтр</b>
+<div class="layout">
+<div class="layout__column layout__column--first">
+<div class="layout__row layout__row--first"></div>
+<div class="layout__row layout__row--second"></div>
 </div>
+<aside class="layout__column layout__column--second">
+<header class="layout__row layout__row--first">
+<h3 class="filter__title-main">Фильтр</h3>
 </header>
-<div class="sidebar__content">
-<div class="sidebar__wrapper">
+<div class="layout__row layout__row--second">
 <section class="filter filter-slider">
 <h3 class="filter__title">Стоимость</h3>
 <div class="filter-slider__line">
@@ -112,26 +114,21 @@
 </p>
 </section>
 </div>
-</div>
 </aside>
-<article class="content">
-<header class="content__header">
-<div class="content__wrapper">
+<article class="layout__column layout__column--third">
+<header class="layout__row layout__row--first">
 <section class="sorting">
 <h3 class="sorting__title">Сортировка</h3>
-<a href="#" class="sorting__item sorting__price">По цене</a>
-<a href="#" class="sorting__item sorting__type">По типу</a>
-<a href="#" class="sorting__item sorting__popular">По популярности</a>
+<a href="#" class="sorting__item sorting__price">Цена</a>
+<a href="#" class="sorting__item sorting__type">Тип</a>
+<a href="#" class="sorting__item sorting__popular">Популярность</a>
 <a href="#" class="sorting__order sorting__order--up"><span class="sorting__order-title">По возростанию</span></a>
 <a href="#" class="sorting__order sorting__order--down"><span class="sorting__order-title">По убыванию</span></a>
 </section>
-</div>
 </header>
-<div class="content__block">
-<div class="content__wrapper">
+<div class="layout__row layout__row--second">
 <section class="catalog">
 <h2 class="catalog__title">Каталог товаров</h2>
-<div class="catalog__items">
 <article class="catalog__item">
 <div class="catalog__item-actions">
 <a href="#" class="btn__unfold catalog__item-btn btn__unfold--font">В корзину</a>
@@ -184,18 +181,20 @@
 <p class="catalog__item-price">1500 руб.</p>
 </div>
 </article>
-</div>
 </section>
 <footer class="pagination">
 <a href="#" class="pagination__btn">Назад</a>
-<a href="#" class="pagination__number effect30-60-100">1</a>
-<a href="#" class="pagination__number effect30-60-100">2</a>
-<a href="#" class="pagination__number effect30-60-100">3</a>
+<a href="#" class="pagination__number">1</a>
+<a href="#" class="pagination__number">2</a>
+<a href="#" class="pagination__number">3</a>
 <a href="#" class="pagination__btn">Вперед</a>
-</footer>	
-</div>
+</footer>
 </div>
 </article>
+<div class="layout__column layout__column--fourth">
+<div class="layout__row layout__row--first"></div>
+<div class="layout__row layout__row--second"></div>
+</div>
 </div>
 </main><footer class="footer">
 <div class="footer__wrapper">
@@ -221,6 +220,7 @@
 <p class="footer__copyright">Разработано в <a class="footer__copyright__link" href="http://htmlacademy.ru">HTML Academy</a></p>
 </div>
 </footer><script src="js/smooth-display.js"></script>
+<script src="js/hamburger.js"></script>
 <script src="js/main.js"></script>
 </body>	
 </html>

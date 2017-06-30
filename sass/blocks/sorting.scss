@@ -1,53 +1,80 @@
-.sorting {
-  position: relative;
+  .sorting {
+    position: relative;
+  }
+
+  .sorting__title {
+    display: none;
+  }
+
+  .sorting__item {
+    margin-right: 3%;
+
+    text-decoration: none;
+    @include font(14px, 16px, normal, #000);
+    @include opaсity-effect(0.4, 0.6, 1);
+  }
+
+  .sorting__order {
+    position: absolute;
+
+    display: block;
+    width: 17px;
+    height: 9px;
+
+    background-image: url(../img/catalog-spr.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    @include opaсity-effect(0.4, 0.6, 1);
+  }
+
+  .sorting__order-title {
+    @include vh;
+  }
+
+  .sorting__order--down {
+    top: 5px;
+    right: 0px;
+
+    margin-left: auto;
+
+    background-position: -24px 0;
+  }
+
+  .sorting__order--up {
+    top: 5px;
+    right: 25px;
+
+    background-position: -24px 0;
+    transform: rotate(180deg);
+  }
+
+@media #{$tablet-width} {
+  .sorting__title {
+    display: inline-block;
+    vertical-align: bottom;  
+
+    margin-right: 7%;
+    @include font-accent(14px, 14px, 900, #000, 2px);
+    text-transform: uppercase;
+  }
+
+  .sorting__item {
+    margin-right: 30px;
+  }
+
+  .sorting__order--up {
+    right: 30px;
+  }
 }
 
-.sorting__title {
-  display: inline;
+@media #{$tablet-width-additional} {
 
-  margin-right: 55px;
-  @include font-accent(16px, 16px, 900, #000, 2px);
-  text-transform: uppercase;
-}
+  .sorting__title {
+    margin-right: 8%;
+    @include font-accent(16px, 16px, 900, #000, 2px);
+  }
 
-.sorting__item {
-  margin-right: 25px;
-
-  text-decoration: none;
-  @include font(14px, 16px, normal, #000);
-  @include opaсity-effect(0.4, 0.6, 1);
-}
-
-.sorting__order {
-  position: absolute;
-
-  display: block;
-  width: 17px;
-  height: 9px;
-
-  background-image: url(../img/catalog-spr.png);
-  background-repeat: no-repeat;
-  cursor: pointer;
-  @include opaсity-effect(0.4, 0.6, 1);
-}
-
-.sorting__order-title {
-  @include vh;
-}
-
-.sorting__order--down {
-  top: 5px;
-  right: 0px;
-
-  margin-left: auto;
-
-  background-position: -24px 0;
-}
-
-.sorting__order--up {
-  top: 5px;
-  right: 40px;
-
-  background-position: -24px 0;
-  transform: rotate(180deg);
+  .sorting__order--up {
+    right: 40px;
+  }
 }

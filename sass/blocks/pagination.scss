@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include font-accent(16px, 16px, 900, #000, 2px);
+  @include font-accent(14px, 14px, 900, #000, 1px);
   text-transform: uppercase;
 
   background-color: #ebebeb;
@@ -10,7 +10,7 @@
 
 .pagination__btn {
   display: block;
-  width: 126px;
+  width: 100px;
   padding: 28px 0;
 
   text-decoration: none;
@@ -27,7 +27,7 @@
 }
 
 .pagination__number {
-  margin: 0 15px;
+  margin: 0 10px;
   text-decoration: none;
   @include opaсity-effect;
 }
@@ -38,4 +38,21 @@
 
 .pagination__btn:last-child {
   margin-left: auto;
+}
+
+@media #{$tablet-width} {
+  .pagination__btn {
+    width: 126px;
+    padding: 28px 0;
+  }
+
+  .pagination__number {
+    margin: 0 15px;
+  }
+}
+
+@media #{$tablet-width-additional} {
+  .pagination {
+    @include font-accent(16px, 16px, 900, #000, 2px);
+  } 
 }

@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Каталог DEVICE</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.min.css">
 	<link rel="stylesheet" href="css/smooth-display.css">
@@ -19,135 +20,133 @@
 				<li class="breadcrumps__item"><a class="breadcrumps__link">Моноподы для селфи</a></li>
 			</ol>
 		</div>
-		<div class="main__content">
-			<aside class="sidebar">
-				<header class="sidebar__header">
-					<div class="sidebar__wrapper">
-						<b class="sidebar__title">Фильтр</b>
-					</div>
+		<div class="layout">
+			<div class="layout__column layout__column--first">
+				<div class="layout__row layout__row--first"></div>
+				<div class="layout__row layout__row--second"></div>
+			</div>
+			<aside class="layout__column layout__column--second">
+				<header class="layout__row layout__row--first">
+					<h3 class="filter__title-main">Фильтр</h3>
 				</header>
-				<div class="sidebar__content">
-					<div class="sidebar__wrapper">
-						<section class="filter filter-slider">
-							<h3 class="filter__title">Стоимость</h3>
-							<div class="filter-slider__line">
-								<div class="filter-slider__bar"></div>
-								<div class="filter-slider__toggle filter-slider__toggle--min"></div>
-								<div class="filter-slider__toggle filter-slider__toggle--max"></div>
-							</div>	
-							<div class="filter-slider__controls">	От <input type="text" value="0" name="filter-slider__value--min"> До <input type="text" value="5000" name="filter-slider__value--max">
-							</div>   
-						</section>
-						<section class="filter filter-check">
-							<h3 class="filter__title">Цвет</h3>
+				<div class="layout__row layout__row--second">
+					<section class="filter filter-slider">
+						<h3 class="filter__title">Стоимость</h3>
+						<div class="filter-slider__line">
+							<div class="filter-slider__bar"></div>
+							<div class="filter-slider__toggle filter-slider__toggle--min"></div>
+							<div class="filter-slider__toggle filter-slider__toggle--max"></div>
+						</div>	
+						<div class="filter-slider__controls">	От <input type="text" value="0" name="filter-slider__value--min"> До <input type="text" value="5000" name="filter-slider__value--max">
+						</div>   
+					</section>
+					<section class="filter filter-check">
+						<h3 class="filter__title">Цвет</h3>
+						<p class="filter__item">
+							<input type="checkbox" name="filter-check-color" id="color-black"><label class="filter-check__text" for="color-black">Черный</label>
+						</p>
+						<p class="filter__item">
+							<input type="checkbox" name="filter-check-color" id="color-red"><label class="filter-check__text" for="color-red">Черный</label>
+						</p>
+						<p class="filter__item">
+							<input type="checkbox" name="filter-check-color" id="color-green"><label class="filter-check__text" for="color-green">Черный</label>
+						</p>
+						<p class="filter__item">
+							<input type="checkbox" name="filter-check-color" id="color-pink"><label class="filter-check__text" for="color-pink">Черный</label>
+						</p>
+					</section>
+					<section class="filter filter-check">
+						<h3 class="filter__title">Bluetoth</h3>
 							<p class="filter__item">
-								<input type="checkbox" name="filter-check-color" id="color-black"><label class="filter-check__text" for="color-black">Черный</label>
+								<input type="radio" name="filter-radio-blth" checked id="blth-yes">						
+								<label class="filter-radio__text" for="blth-yes">Есть</label>
 							</p>
 							<p class="filter__item">
-								<input type="checkbox" name="filter-check-color" id="color-red"><label class="filter-check__text" for="color-red">Черный</label>
+								<input type="radio" name="filter-radio-blth" id="blth-no"><label class="filter-radio__text" for="blth-no">Нет</label>
 							</p>
-							<p class="filter__item">
-								<input type="checkbox" name="filter-check-color" id="color-green"><label class="filter-check__text" for="color-green">Черный</label>
-							</p>
-							<p class="filter__item">
-								<input type="checkbox" name="filter-check-color" id="color-pink"><label class="filter-check__text" for="color-pink">Черный</label>
-							</p>
-						</section>
-						<section class="filter filter-check">
-							<h3 class="filter__title">Bluetoth</h3>
-								<p class="filter__item">
-									<input type="radio" name="filter-radio-blth" checked id="blth-yes">						
-									<label class="filter-radio__text" for="blth-yes">Есть</label>
-								</p>
-								<p class="filter__item">
-									<input type="radio" name="filter-radio-blth" id="blth-no"><label class="filter-radio__text" for="blth-no">Нет</label>
-								</p>
-						</section>
-					</div>
+					</section>
 				</div>
 			</aside>
-			<article class="content">
-				<header class="content__header">
-					<div class="content__wrapper">
-						<section class="sorting">
-							<h3 class="sorting__title">Сортировка</h3>
-							<a href="#" class="sorting__item sorting__price">По цене</a>
-							<a href="#" class="sorting__item sorting__type">По типу</a>
-							<a href="#" class="sorting__item sorting__popular">По популярности</a>
-							<a href="#" class="sorting__order sorting__order--up"><span class="sorting__order-title">По возростанию</span></a>
-							<a href="#" class="sorting__order sorting__order--down"><span class="sorting__order-title">По убыванию</span></a>
-						</section>
-					</div>
+			<article class="layout__column layout__column--third">
+				<header class="layout__row layout__row--first">
+					<section class="sorting">
+						<h3 class="sorting__title">Сортировка</h3>
+						<a href="#" class="sorting__item sorting__price">Цена</a>
+						<a href="#" class="sorting__item sorting__type">Тип</a>
+						<a href="#" class="sorting__item sorting__popular">Популярность</a>
+						<a href="#" class="sorting__order sorting__order--up"><span class="sorting__order-title">По возростанию</span></a>
+						<a href="#" class="sorting__order sorting__order--down"><span class="sorting__order-title">По убыванию</span></a>
+					</section>
 				</header>
-				<div class="content__block">
-					<div class="content__wrapper">
-						<section class="catalog">
-							<h2 class="catalog__title">Каталог товаров</h2>
-							<div class="catalog__items">
-								<article class="catalog__item">
-									<div class="catalog__item-actions">
-										<a href="#" class="btn__unfold catalog__item-btn btn__unfold--font">В корзину</a>
-										<a href="#" class="catalog__item-compare">Добавить к сравнению</a>
-									</div>
-									<div class="catalog__item-img">
-										<img src="img/self-product.jpg" width="360" height="380" alt="">
-									</div>
-									<div class="catalog__item-text">							
-										<h3 class="catalog__item-title">Профессиональная селфи-палка</h3>
-										<p class="catalog__item-price">1500 руб.</p>
-									</div>
-								</article>
-								<article class="catalog__item">
-									<div class="catalog__item-actions">
-										<a href="#" class="btn__unfold catalog__item-btn btn__unfold--font">В корзину</a>
-										<a href="#" class="catalog__item-compare">Добавить к сравнению</a>
-									</div>
-									<div class="catalog__item-img">
-										<img src="img/self-product.jpg" width="360" height="380" alt="">
-									</div>
-									<div class="catalog__item-text">							
-										<h3 class="catalog__item-title">Профессиональная селфи-палка</h3>
-										<p class="catalog__item-price">1500 руб.</p>
-									</div>
-								</article>
-								<article class="catalog__item">
-									<div class="catalog__item-actions">
-										<a href="#" class="btn__unfold catalog__item-btn btn__unfold--font">В корзину</a>
-										<a href="#" class="catalog__item-compare">Добавить к сравнению</a>
-									</div>
-									<div class="catalog__item-img">
-										<img src="img/self-product.jpg" width="360" height="380" alt="">
-									</div>
-									<div class="catalog__item-text">							
-										<h3 class="catalog__item-title">Профессиональная селфи-палка</h3>
-										<p class="catalog__item-price">1500 руб.</p>
-									</div>
-								</article>
-								<article class="catalog__item">
-									<div class="catalog__item-actions">
-										<a href="#" class="btn__unfold catalog__item-btn btn__unfold--font">В корзину</a>
-										<a href="#" class="catalog__item-compare">Добавить к сравнению</a>
-									</div>
-									<div class="catalog__item-img">
-										<img src="img/self-product.jpg" width="360" height="380" alt="">
-									</div>
-									<div class="catalog__item-text">							
-										<h3 class="catalog__item-title">Профессиональная селфи-палка</h3>
-										<p class="catalog__item-price">1500 руб.</p>
-									</div>
-								</article>
+				<div class="layout__row layout__row--second">
+					<section class="catalog">
+						<h2 class="catalog__title">Каталог товаров</h2>
+						<article class="catalog__item">
+							<div class="catalog__item-actions">
+								<a href="#" class="btn__unfold catalog__item-btn btn__unfold--font">В корзину</a>
+								<a href="#" class="catalog__item-compare">Добавить к сравнению</a>
 							</div>
-						</section>
-						<footer class="pagination">
-							<a href="#" class="pagination__btn">Назад</a>
-							<a href="#" class="pagination__number effect30-60-100">1</a>
-							<a href="#" class="pagination__number effect30-60-100">2</a>
-							<a href="#" class="pagination__number effect30-60-100">3</a>
-							<a href="#" class="pagination__btn">Вперед</a>
-						</footer>	
-					</div>
+							<div class="catalog__item-img">
+								<img src="img/self-product.jpg" width="360" height="380" alt="">
+							</div>
+							<div class="catalog__item-text">							
+								<h3 class="catalog__item-title">Профессиональная селфи-палка</h3>
+								<p class="catalog__item-price">1500 руб.</p>
+							</div>
+						</article>
+						<article class="catalog__item">
+							<div class="catalog__item-actions">
+								<a href="#" class="btn__unfold catalog__item-btn btn__unfold--font">В корзину</a>
+								<a href="#" class="catalog__item-compare">Добавить к сравнению</a>
+							</div>
+							<div class="catalog__item-img">
+								<img src="img/self-product.jpg" width="360" height="380" alt="">
+							</div>
+							<div class="catalog__item-text">							
+								<h3 class="catalog__item-title">Профессиональная селфи-палка</h3>
+								<p class="catalog__item-price">1500 руб.</p>
+							</div>
+						</article>
+						<article class="catalog__item">
+							<div class="catalog__item-actions">
+								<a href="#" class="btn__unfold catalog__item-btn btn__unfold--font">В корзину</a>
+								<a href="#" class="catalog__item-compare">Добавить к сравнению</a>
+							</div>
+							<div class="catalog__item-img">
+								<img src="img/self-product.jpg" width="360" height="380" alt="">
+							</div>
+							<div class="catalog__item-text">							
+								<h3 class="catalog__item-title">Профессиональная селфи-палка</h3>
+								<p class="catalog__item-price">1500 руб.</p>
+							</div>
+						</article>
+						<article class="catalog__item">
+							<div class="catalog__item-actions">
+								<a href="#" class="btn__unfold catalog__item-btn btn__unfold--font">В корзину</a>
+								<a href="#" class="catalog__item-compare">Добавить к сравнению</a>
+							</div>
+							<div class="catalog__item-img">
+								<img src="img/self-product.jpg" width="360" height="380" alt="">
+							</div>
+							<div class="catalog__item-text">							
+								<h3 class="catalog__item-title">Профессиональная селфи-палка</h3>
+								<p class="catalog__item-price">1500 руб.</p>
+							</div>
+						</article>
+					</section>
+					<footer class="pagination">
+						<a href="#" class="pagination__btn">Назад</a>
+						<a href="#" class="pagination__number">1</a>
+						<a href="#" class="pagination__number">2</a>
+						<a href="#" class="pagination__number">3</a>
+						<a href="#" class="pagination__btn">Вперед</a>
+					</footer>
 				</div>
 			</article>
+			<div class="layout__column layout__column--fourth">
+				<div class="layout__row layout__row--first"></div>
+				<div class="layout__row layout__row--second"></div>
+			</div>
 		</div>
 	</main>
 include partials/_footer.pug

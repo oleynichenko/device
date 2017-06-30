@@ -168,7 +168,7 @@ gulp.task('generate-favicon', function(done) {
       },
       androidChrome: {
         pictureAspect: 'noChange',
-        themeColor: '#fcff66',
+        themeColor: '#ffe27f',
         manifest: {
           name: 'Device',
           display: 'standalone',
@@ -218,6 +218,5 @@ gulp.task('check-for-favicon-update', function(done) {
     }
   });
 });
-
 
 
